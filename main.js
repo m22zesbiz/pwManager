@@ -590,10 +590,14 @@ window.addEventListener('DOMContentLoaded', function() {
                 searchBoxEle.addEventListener(event, () => {
                     var webs = document.querySelectorAll('.web')
                     webs.forEach((web) => {
-                        if (!web.innerHTML.toLowerCase().includes(searchBoxEle.innerHTML.toLowerCase())) {
-                            web.style.display = 'none'
-                        } else {
+                        if (searchBoxEle.innerHTML = '') {
                             web.style.display = 'block'
+                        } else {
+                            if (!web.innerHTML.toLowerCase().includes(searchBoxEle.innerHTML.toLowerCase())) {
+                                web.style.display = 'none'
+                            } else {
+                                web.style.display = 'block'
+                            }
                         }
                     })
                 })
