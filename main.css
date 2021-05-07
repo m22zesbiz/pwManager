@@ -288,7 +288,7 @@ section {
 }
 
 #webSelectionForPwSave option {
-    color: initial;
+    color: #000000;
 }
 
 #pwSaveForm .textField {
@@ -331,7 +331,7 @@ section {
 }
 
 #webSelectionForGenPw option {
-    color: initial;
+    color: #000000;
 }
 
 #genPwSaveForm span {
