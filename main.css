@@ -352,10 +352,10 @@ footer {
 
 @media screen and (max-width: 650px) {
     #webList {
-        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 68px);
+        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 90px);
     }
     #pwDetail {
-        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 68px);
+        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 90px);
     }
 }
 
