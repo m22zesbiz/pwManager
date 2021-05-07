@@ -11,6 +11,7 @@
 body {
     background-color: rgba(180, 248, 200, 0.2);
     min-width: 350px;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -350,8 +351,11 @@ footer {
 /* Mobile Style */
 
 @media screen and (max-width: 650px) {
-    #content {
-        height: calc(100vh - 68px - 40px - 68px);
+    #webList {
+        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 68px);
+    }
+    #pwDetail {
+        height: calc(100vh - 67px - 15px - 62px - 62px - 35px - 39px - 68px);
     }
 }
 
