@@ -568,7 +568,6 @@ window.addEventListener('DOMContentLoaded', function() {
             searchBoxEle.addEventListener('focus', () => {
                 if (searchBoxEle.innerHTML == '搜尋...') {
                     searchBoxEle.innerHTML = ''
-                    searchBoxEle.style.color = '#000000'
                     searchBoxEle.style.outlineStyle = 'none'
                 }
             })
