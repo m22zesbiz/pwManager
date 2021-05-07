@@ -585,7 +585,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     e.preventDefault()
                 }
             })
-            var events = ['input', 'change', 'cut', 'copy', 'paste']
+            var events = ['input', 'change', 'cut', 'copy', 'paste', 'keypress']
             events.forEach((event) => {
                 searchBoxEle.addEventListener(event, () => {
                     var webs = document.querySelectorAll('.web')
