@@ -287,10 +287,6 @@ section {
     border: 0;
 }
 
-#webSelectionForPwSave option {
-    color: #000000;
-}
-
 #pwSaveForm .textField {
     width: calc(100% - 140px);
 }
@@ -328,10 +324,6 @@ section {
 #webSelectionForGenPw {
     width: calc(100% - 140px);
     border: 0;
-}
-
-#webSelectionForGenPw option {
-    color: #000000;
 }
 
 #genPwSaveForm span {
@@ -460,17 +452,10 @@ footer {
     .alertBox {
         background-color: #1B2E3C;
     }
-    /* Password Saver Style */
-    #webSelectionForPwSave option {
-        color: #ffffff;
-    }
     /* Password Creator Style */
     #pwGenSubmit {
         background-color: #1B2E3C;
         box-shadow: 0 0 0;
-    }
-    #webSelectionForGenPw option {
-        color: #ffffff;
     }
     /* Footer Style */
     footer {
