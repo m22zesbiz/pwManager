@@ -208,7 +208,7 @@ section {
 
 .web {
     box-shadow: 0 0 10px #cccccc;
-    padding: 7px 10px;
+    padding: 5px 10px;
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 25px;
@@ -225,7 +225,7 @@ section {
 .pwContent {
     background-color: rgba(180, 248, 200, 0.2);
     box-shadow: 0 0 10px #cccccc;
-    padding: 15px;
+    padding: 10px 15px 5px;
     margin-left: 10px;
     margin-bottom: 10px;
     border-radius: 25px;
@@ -234,7 +234,7 @@ section {
 .pw {
     background-color: rgba(160, 231, 229, 0.2);
     box-shadow: 0 0 10px #cccccc;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .alertBoxBackground {
@@ -271,7 +271,7 @@ section {
 }
 
 #pwSaveForm div {
-    padding: 10px 0;
+    padding: 7px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -314,7 +314,7 @@ section {
 }
 
 #genPwSaveForm div {
-    padding: 10px 0;
+    padding: 7px 0;
     display: flex;
     justify-content: space-between;
 }

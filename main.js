@@ -205,6 +205,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                         var pwListHeading = document.createElement('div')
                         pwListHeading.className = 'pwContent'
+                        pwListHeading.style.padding = '5px 15px'
                         pwListHeading.style.flex = '1'
                         pwListHeading.innerHTML = div.innerHTML
                         pwDetailEle.append(pwListHeading)
@@ -232,22 +233,22 @@ window.addEventListener('DOMContentLoaded', function() {
                                     div.append(flexbox)
                                     var copyIDButton = document.createElement('button')
                                     copyIDButton.innerHTML = '複製ID'
-                                    copyIDButton.style.margin = '5px'
+                                    copyIDButton.style.margin = '2px'
                                     copyIDButton.style.flex = 1
                                     var copyPasswordButton = document.createElement('button')
                                     copyPasswordButton.innerHTML = '複製密碼'
-                                    copyPasswordButton.style.margin = '5px'
+                                    copyPasswordButton.style.margin = '2px'
                                     copyPasswordButton.style.flex = 1
                                     var brForFlex = document.createElement('div')
                                     brForFlex.style.flexBasis = '100%'
                                     brForFlex.style.height = '0'
                                     var modifyButton = document.createElement('button')
                                     modifyButton.innerHTML = '編輯'
-                                    modifyButton.style.margin = '5px'
+                                    modifyButton.style.margin = '2px'
                                     modifyButton.style.flex = 1
                                     var deleteButton = document.createElement('button')
                                     deleteButton.innerHTML = '刪除'
-                                    deleteButton.style.margin = '5px'
+                                    deleteButton.style.margin = '2px'
                                     deleteButton.style.flex = 1
                                     copyIDButton.addEventListener('click', function() {
                                         copyDivToClipboard(doc.data().ID)
