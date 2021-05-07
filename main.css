@@ -460,10 +460,17 @@ footer {
     .alertBox {
         background-color: #1B2E3C;
     }
+    /* Password Saver Style */
+    #webSelectionForPwSave option {
+        color: #ffffff;
+    }
     /* Password Creator Style */
     #pwGenSubmit {
         background-color: #1B2E3C;
         box-shadow: 0 0 0;
+    }
+    #webSelectionForGenPw option {
+        color: #ffffff;
     }
     /* Footer Style */
     footer {
