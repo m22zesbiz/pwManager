@@ -286,7 +286,6 @@ window.addEventListener('DOMContentLoaded', function() {
                                         loginIDForModifyInput.addEventListener('focus', () => {
                                             if (loginIDForModifyInput.innerHTML == '登入ID') {
                                                 loginIDForModifyInput.innerHTML = ''
-                                                loginIDForModifyInput.style.color = '#ffffff'
                                                 loginIDForModifyInput.style.outlineStyle = 'none'
                                             }
                                         })
@@ -304,7 +303,6 @@ window.addEventListener('DOMContentLoaded', function() {
                                         loginPwForModifyInput.addEventListener('focus', () => {
                                             if (loginPwForModifyInput.innerHTML == '登入密碼') {
                                                 loginPwForModifyInput.innerHTML = ''
-                                                loginPwForModifyInput.style.color = '#ffffff'
                                                 loginPwForModifyInput.style.outlineStyle = 'none'
                                             }
                                         })
@@ -655,7 +653,6 @@ window.addEventListener('DOMContentLoaded', function() {
             webIfOtherForPwSaveEle.addEventListener('focus', () => {
                 if (webIfOtherForPwSaveEle.innerHTML == '其他網頁...') {
                     webIfOtherForPwSaveEle.innerHTML = ''
-                    webIfOtherForPwSaveEle.style.color = '#ffffff'
                     webIfOtherForPwSaveEle.style.outlineStyle = 'none'
                 }
             })
@@ -673,7 +670,6 @@ window.addEventListener('DOMContentLoaded', function() {
             loginIDForPwSaveEle.addEventListener('focus', () => {
                 if (loginIDForPwSaveEle.innerHTML == '登入ID') {
                     loginIDForPwSaveEle.innerHTML = ''
-                    loginIDForPwSaveEle.style.color = '#ffffff'
                     loginIDForPwSaveEle.style.outlineStyle = 'none'
                 }
             })
@@ -691,7 +687,6 @@ window.addEventListener('DOMContentLoaded', function() {
             loginPwForPwSaveEle.addEventListener('focus', () => {
                 if (loginPwForPwSaveEle.innerHTML == '登入密碼') {
                     loginPwForPwSaveEle.innerHTML = ''
-                    loginPwForPwSaveEle.style.color = '#ffffff'
                     loginPwForPwSaveEle.style.outlineStyle = 'none'
                 }
             })
@@ -893,7 +888,6 @@ window.addEventListener('DOMContentLoaded', function() {
                             }
                         }
                     }
-                    showPwForGenEle.style.color = '#ffffff'
                     showPwForGenEle.innerHTML = pwGen
                     copyGenPwEle.addEventListener('click', copyDivToClipboard('showPwForGen'))
                 }
@@ -901,7 +895,6 @@ window.addEventListener('DOMContentLoaded', function() {
             webIfOtherForGenPwEle.addEventListener('focus', () => {
                 if (webIfOtherForGenPwEle.innerHTML == '其他網頁...') {
                     webIfOtherForGenPwEle.innerHTML = ''
-                    webIfOtherForGenPwEle.style.color = '#ffffff'
                     webIfOtherForGenPwEle.style.outlineStyle = 'none'
                 }
             })
@@ -919,7 +912,6 @@ window.addEventListener('DOMContentLoaded', function() {
             loginIDForGenPwEle.addEventListener('focus', () => {
                 if (loginIDForGenPwEle.innerHTML == '登入ID') {
                     loginIDForGenPwEle.innerHTML = ''
-                    loginIDForGenPwEle.style.color = '#ffffff'
                     loginIDForGenPwEle.style.outlineStyle = 'none'
                 }
             })
