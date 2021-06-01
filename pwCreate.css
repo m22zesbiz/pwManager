@@ -28,8 +28,8 @@
 }
 
 #webSelectionForGenPw {
-    width: calc(100% - 100px);
     border: 0;
+    -webkit-appearance: none;
 }
 
 #genPwSaveForm span {
