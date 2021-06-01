@@ -1,0 +1,27 @@
+/* Login Form Style */
+
+#loginHeading {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+#loginMessage {
+    color: red;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form * {
+    margin: 5px 0;
+    width: 70%;
+    border: 0;
+}
+
+#loginBtnForLogin {
+    width: initial;
+}

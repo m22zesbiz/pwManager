@@ -1,0 +1,41 @@
+/* Mobile Style */
+
+@media screen and (max-width: 650px) {
+    #webList {
+        width: 110px;
+        height: calc(100vh - 46px - 68px - 15px - 55px - 55px - 20px - 15px - 40px);
+    }
+    #pwDetail {
+        height: calc(100vh - 46px - 68px - 15px - 55px - 55px - 20px - 15px - 40px);
+    }
+}
+
+
+/* PC Style */
+
+@media screen and (min-width: 650px) and (max-width: 999px) {
+    .box:hover {
+        background-color: rgba(180, 248, 200, 0.2);
+    }
+    .pwContent:hover {
+        background-color: rgba(160, 231, 229, 0.2);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    header {
+        padding-left: calc((100vw - 1000px)/2);
+        padding-right: calc((100vw - 1000px)/2);
+    }
+    #content {
+        height: calc(100vh - 68px - 40px);
+        padding-left: calc((100vw - 1000px + 20px)/2);
+        padding-right: calc((100vw - 1000px + 20px)/2);
+    }
+    .box:hover {
+        background-color: rgba(180, 248, 200, 0.2);
+    }
+    .pwContent:hover {
+        background-color: rgba(160, 231, 229, 0.2);
+    }
+}

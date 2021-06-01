@@ -1,0 +1,23 @@
+/* Password Saver Style */
+
+#pwSaveHeading {
+    text-align: center;
+}
+
+#pwSaveForm div {
+    padding: 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#pwSaveForm span {
+    margin: auto 0;
+}
+
+#webSelectionForPwSave {
+    border: 0;
+}
+
+#pwSaveForm .textField {
+    width: calc(100% - 100px);
+}

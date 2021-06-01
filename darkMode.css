@@ -1,0 +1,81 @@
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+    /* Page Style */
+    * {
+        color: #ffffff;
+    }
+    body {
+        background-color: #1B2E3C;
+    }
+    .link {
+        background-color: #1B2E3C;
+        box-shadow: 0 0 0;
+    }
+    .link:hover {
+        color: #F3E3E2;
+        background-color: #74112F;
+    }
+    .box {
+        background-color: #0C0C1E;
+        box-shadow: 0 0 0;
+    }
+    .textField {
+        background-color: #1B2E3C;
+        box-shadow: 0 0 0;
+    }
+    button {
+        background-color: #1B2E3C;
+        box-shadow: 0 0 0;
+        border: 2px solid #0C0C1E;
+    }
+    /* Header Style */
+    header {
+        background-color: #0C0C1E;
+        box-shadow: 0 0 0;
+    }
+    /* Home Style */
+    #functionHeading {
+        border-bottom: 1px solid #333333;
+    }
+    /* Password Manager Style */
+    #pwList {
+        background-color: #0C0C1E;
+        box-shadow: 0 0 0;
+    }
+    #webList {
+        border-right: 1px solid #333333;
+    }
+    .web {
+        box-shadow: 0 0 0;
+    }
+    .pwContent {
+        background-color: #1B2E3C;
+        box-shadow: 0 0 0;
+    }
+    .pw {
+        background-color: #0C0C1E;
+        box-shadow: 0 0 0;
+    }
+    .alertBox {
+        background-color: #0C0C1E;
+    }
+    /* Password Creator Style */
+    #pwGenSubmit {
+        background-color: #1B2E3C;
+        box-shadow: 0 0 0;
+    }
+    /* Footer Style */
+    footer {
+        background-color: #0C0C1E;
+        box-shadow: -1px 0px 0;
+    }
+    @media screen and (min-width: 650px) {
+        .box:hover {
+            background-color: rgba(55, 62, 64, 0.95);
+        }
+        .pwContent:hover {
+            background-color: rgba(55, 62, 64, 0.95);
+        }
+    }
+}

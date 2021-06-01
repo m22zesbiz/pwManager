@@ -1,0 +1,92 @@
+/* Password Manager Style */
+
+#pwMgrHeading {
+    text-align: center;
+}
+
+#searchBox {
+    color: #aaaaaa;
+    flex: 1;
+}
+
+#catFilter {
+    flex: 1;
+}
+
+#pwList {
+    background-color: rgba(160, 231, 229, 0.2);
+    padding: 10px;
+    box-shadow: 0px 0px 10px #cccccc;
+    border-radius: 25px;
+    display: flex;
+}
+
+#webList {
+    height: calc(100vh - 68px - 15px - 55px - 55px - 20px - 15px - 40px);
+    padding: 5px;
+    width: 250px;
+    border-right: 1px solid #cccccc;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.web {
+    box-shadow: 0 0 10px #cccccc;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+
+#pwDetail {
+    padding: 5px 0;
+    height: calc(100vh - 68px - 15px - 55px - 55px - 20px - 15px - 40px);
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.pwContent {
+    background-color: rgba(180, 248, 200, 0.2);
+    box-shadow: 0 0 10px #cccccc;
+    padding: 10px 15px 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.pw {
+    background-color: rgba(160, 231, 229, 0.2);
+    box-shadow: 0 0 10px #cccccc;
+    margin: 2px 0 5px;
+}
+
+.alertBoxBackground {
+    background: rgba(0, 0, 0, 0.4);
+    height: calc(100vh - 67px - 39px);
+    width: 100%;
+    position: absolute;
+    top: 67px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.alertBox {
+    background-color: #ffffff;
+    width: 230px;
+    padding: 15px;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+
+.alertBox div {
+    margin: 0 0 5px;
+}
+
+.alertBox button {
+    margin: 5px 10px 0;
+}

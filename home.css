@@ -1,0 +1,38 @@
+/* Home Style */
+
+#welcomeMessage {
+    text-align: center;
+}
+
+#counter {
+    display: flex;
+    flex-direction: column;
+}
+
+#countdown {
+    margin-left: 20px;
+    align-self: flex-end;
+}
+
+#functionHeading {
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+#functionsBox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.functions {
+    border-radius: 25px;
+    margin: 10px 5px 5px;
+    padding: 5px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}
