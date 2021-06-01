@@ -17,8 +17,6 @@ window.addEventListener('DOMContentLoaded', function() {
             })
         } else {
             loginScreenEle.style.display = 'block'
-            webNameEle.style.display = 'block'
-            webNameSplitEle.style.display = 'block'
         }
     });
     emailForLoginEle.addEventListener('keypress', (e) => {
@@ -51,10 +49,6 @@ window.addEventListener('DOMContentLoaded', function() {
             } else {
                 firebase.auth().signInWithEmailAndPassword(loginFormData.loginEmail, loginFormData.loginPassword)
                     .then((user) => {
-                        if (!window.matchMedia("(min-width: 650px)").matches) {
-                            webNameEle.style.display = 'none'
-                            webNameSplitEle.style.display = 'none'
-                        }
                         homeScreenEle.style.display = 'block'
                         loginScreenEle.style.display = 'none'
                         pwMgrScreenEle.style.display = 'none'
