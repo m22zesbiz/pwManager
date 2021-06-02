@@ -22,8 +22,9 @@ body {
 
 .link {
     cursor: pointer;
+    margin: 5px;
     background-color: rgba(180, 248, 200, 0.2);
-    box-shadow: 0 0 10px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
 }
 
 .link:hover {
@@ -39,21 +40,23 @@ body {
 .box {
     background-color: rgba( 160, 231, 229, 0.2);
     padding: 10px 20px;
-    margin-bottom: 15px;
-    box-shadow: 0px 0px 10px #cccccc;
+    margin: 5px 5px 15px;
+    box-shadow: 0px 0px 5px #cccccc;
     border-radius: 25px;
 }
 
 .textField {
     background-color: rgba(180, 248, 200, 0.2);
-    box-shadow: 0 0 10px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+    margin: 5px;
     padding: 7px 10px;
     border-radius: 25px;
 }
 
 button {
     background-color: rgba(180, 248, 200, 0.2);
-    box-shadow: 0 0 10px #cccccc;
+    box-shadow: 0 0 5px #cccccc;
+    margin: 5px;
     padding: 5px 10px;
     border: 0;
     border-radius: 25px;

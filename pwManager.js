@@ -60,14 +60,25 @@ window.addEventListener('DOMContentLoaded', function() {
                             pwDetailEle.removeChild(pwDetailEle.firstChild)
                         }
                         var pwListHeading = document.createElement('div')
-                        pwListHeading.className = 'pwContent'
-                        pwListHeading.style.padding = '5px 15px'
-                        pwListHeading.style.flex = '1'
-                        pwListHeading.innerHTML = div.innerHTML
+                        pwListHeading.className = 'flexbox'
+                        var pwListTitle = document.createElement('div')
+                        pwListTitle.className = 'pwContent'
+                        pwListTitle.style.padding = '5px 15px'
+                        pwListTitle.style.flex = '1'
+                        pwListTitle.innerHTML = div.innerHTML
                         pwDetailEle.append(pwListHeading)
+                        pwListHeading.append(pwListTitle)
                         db.collection('Password').where('Web', '==', div.innerHTML.replace('&amp;', '&')).orderBy('Index').get().then(function(snapshot) {
                             snapshot.forEach((doc) => {
                                 if (firebase.auth().currentUser.email.split('@')[0] == doc.data().User) {
+                                    var webNameModifyBtn = document.createElement('span')
+                                    webNameModifyBtn.className = 'pwContent link'
+                                    webNameModifyBtn.style.width = 'calc(30px + 1rem)'
+                                    webNameModifyBtn.style.padding = '10px 0'
+                                    webNameModifyBtn.style.margin = '5px'
+                                    webNameModifyBtn.style.textAlign = 'center'
+                                    webNameModifyBtn.innerHTML = '改'
+                                    pwListHeading.append(webNameModifyBtn)
                                     var flexboxContainer = document.createElement('div')
                                     flexboxContainer.className = 'flexbox'
                                     pwDetailEle.append(flexboxContainer)
@@ -78,15 +89,15 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var pwContent = document.createElement('div')
                                     pwContent.innerHTML = `
                                             <span>登入ID: </span>
-                                            <div id='${doc.data().ID}' class='pw textField' style='width: 100%;'>${doc.data().ID}</div>
+                                            <div id='${doc.data().ID}' class='pw textField'>${doc.data().ID}</div>
                                             <span>登入密碼: </span>
-                                            <div id='${doc.data().Password}' class='pw textField' style='width: 100%;'>${doc.data().Password}</div>
+                                            <div id='${doc.data().Password}' class='pw textField'>${doc.data().Password}</div>
                                             <span>電郵: </span>
-                                            <div class='pw textField' style='width: 100%;'>${doc.data().Email}</div>
+                                            <div class='pw textField'>${doc.data().Email}</div>
                                             <span>電話: </span>
-                                            <div class='pw textField' style='width: 100%;'>${doc.data().Phone}</div>
+                                            <div class='pw textField'>${doc.data().Phone}</div>
                                             <span>備註: </span>
-                                            <div class='pw textField' style='width: 100%;'>${doc.data().Memo}</div>
+                                            <div class='pw textField'>${doc.data().Memo}</div>
                                             `
                                     div.append(pwContent)
                                     var flexbox = document.createElement('div')
@@ -173,11 +184,17 @@ window.addEventListener('DOMContentLoaded', function() {
                                             if (loginIDForModifyInput.innerHTML == '登入ID') {
                                                 loginIDForModifyInput.innerHTML = ''
                                                 loginIDForModifyInput.style.outlineStyle = 'none'
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    loginIDForModifyInput.style.color = '#ffffff'
+                                                } else {
+                                                    loginIDForModifyInput.style.color = '#000000'
+                                                }
                                             }
                                         })
                                         loginIDForModifyInput.addEventListener('focusout', () => {
                                             if (loginIDForModifyInput.innerHTML == '') {
                                                 loginIDForModifyInput.innerHTML = '登入ID'
+                                                loginIDForModifyInput.style.color = '#aaaaaa'
                                             }
                                         })
                                         loginIDForModifyInput.addEventListener('keypress', (e) => {
@@ -189,11 +206,17 @@ window.addEventListener('DOMContentLoaded', function() {
                                             if (loginPwForModifyInput.innerHTML == '登入密碼') {
                                                 loginPwForModifyInput.innerHTML = ''
                                                 loginPwForModifyInput.style.outlineStyle = 'none'
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    loginPwForModifyInput.style.color = '#ffffff'
+                                                } else {
+                                                    loginPwForModifyInput.style.color = '#000000'
+                                                }
                                             }
                                         })
                                         loginPwForModifyInput.addEventListener('focusout', () => {
                                             if (loginPwForModifyInput.innerHTML == '') {
                                                 loginPwForModifyInput.innerHTML = '登入密碼'
+                                                loginPwForModifyInput.style.color = '#aaaaaa'
                                             }
                                         })
                                         loginPwForModifyInput.addEventListener('keypress', (e) => {
@@ -205,11 +228,17 @@ window.addEventListener('DOMContentLoaded', function() {
                                             if (emailForModifyInput.innerHTML == '電郵') {
                                                 emailForModifyInput.innerHTML = ''
                                                 emailForModifyInput.style.outlineStyle = 'none'
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    emailForModifyInput.style.color = '#ffffff'
+                                                } else {
+                                                    emailForModifyInput.style.color = '#000000'
+                                                }
                                             }
                                         })
                                         emailForModifyInput.addEventListener('focusout', () => {
                                             if (emailForModifyInput.innerHTML == '') {
                                                 emailForModifyInput.innerHTML = '電郵'
+                                                emailForModifyInput.style.color = '#aaaaaa'
                                             }
                                         })
                                         emailForModifyInput.addEventListener('keypress', (e) => {
@@ -221,11 +250,17 @@ window.addEventListener('DOMContentLoaded', function() {
                                             if (phoneForModifyInput.innerHTML == '電話') {
                                                 phoneForModifyInput.innerHTML = ''
                                                 phoneForModifyInput.style.outlineStyle = 'none'
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    phoneForModifyInput.style.color = '#ffffff'
+                                                } else {
+                                                    phoneForModifyInput.style.color = '#000000'
+                                                }
                                             }
                                         })
                                         phoneForModifyInput.addEventListener('focusout', () => {
                                             if (phoneForModifyInput.innerHTML == '') {
                                                 phoneForModifyInput.innerHTML = '電話'
+                                                phoneForModifyInput.style.color = '#aaaaaa'
                                             }
                                         })
                                         phoneForModifyInput.addEventListener('keypress', (e) => {
@@ -392,69 +427,117 @@ window.addEventListener('DOMContentLoaded', function() {
                                     flexbox.append(brForFlex)
                                     flexbox.append(modifyButton)
                                     flexbox.append(deleteButton)
-                                    var moveBtnContainer = document.createElement('div')
-                                    moveBtnContainer.className = 'flexbox'
-                                    moveBtnContainer.style.flexDirection = 'column'
-                                    var moveUpBtn = document.createElement('div')
-                                    moveUpBtn.className = 'pwContent link'
-                                    moveUpBtn.style.width = 'calc(30px + 1rem)'
-                                    moveUpBtn.style.padding = '10px 0'
-                                    moveUpBtn.style.marginLeft = '5px'
-                                    moveUpBtn.style.textAlign = 'center'
-                                    moveUpBtn.innerHTML = '△'
-                                    var positionIndex = document.createElement('div')
-                                    positionIndex.className = 'pwContent'
-                                    positionIndex.id = `${doc.data().Web}${doc.data().Index}`
-                                    positionIndex.style.width = 'calc(30px + 1rem)'
-                                    positionIndex.style.padding = '10px 0'
-                                    positionIndex.style.marginLeft = '5px'
-                                    positionIndex.style.textAlign = 'center'
-                                    positionIndex.innerHTML = doc.data().Index
-                                    var moveDownBtn = document.createElement('div')
-                                    moveDownBtn.className = 'pwContent link'
-                                    moveDownBtn.style.width = 'calc(30px + 1rem)'
-                                    moveDownBtn.style.padding = '10px 0'
-                                    moveDownBtn.style.marginLeft = '5px'
-                                    moveDownBtn.style.textAlign = 'center'
-                                    moveDownBtn.innerHTML = '▽'
-                                    moveUpBtn.addEventListener('click', () => {
-                                        if (doc.data().Index !== 1) {
-                                            db.collection('Password').where('Web', '==', doc.data().Web).where('Index', '==', Number(doc.data().Index) - 1).limit(1).get().then((snapshot) => {
-                                                snapshot.forEach((doc) => {
+                                    webNameModifyBtn.addEventListener('click', () => {
+                                        if (webNameModifyBtn.innerHTML == '改') {
+                                            webNameModifyBtn.innerHTML = '✔'
+                                            pwListTitle.contentEditable = 'true'
+                                            pwListTitle.innerHTML = '請輸入新網頁名稱'
+                                            pwListTitle.style.color = '#aaaaaa'
+                                            pwListTitle.addEventListener('focus', () => {
+                                                if (pwListTitle.innerHTML == '請輸入新網頁名稱') {
+                                                    pwListTitle.innerHTML = ''
+                                                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                        pwListTitle.style.color = '#ffffff'
+                                                    } else {
+                                                        pwListTitle.style.color = '#000000'
+                                                    }
+                                                }
+                                            })
+                                            pwListTitle.addEventListener('focusout', () => {
+                                                if (pwListTitle.innerHTML == '') {
+                                                    pwListTitle.innerHTML = '請輸入新網頁名稱'
+                                                    pwListTitle.style.color = '#aaaaaa'
+                                                }
+                                            })
+                                            var moveBtnContainer = document.createElement('div')
+                                            moveBtnContainer.className = 'flexbox'
+                                            moveBtnContainer.id = 'movingBtnContainer'
+                                            moveBtnContainer.style.flexDirection = 'column'
+                                            var moveUpBtn = document.createElement('div')
+                                            moveUpBtn.className = 'pwContent link'
+                                            moveUpBtn.style.width = 'calc(30px + 1rem)'
+                                            moveUpBtn.style.padding = '10px 0'
+                                            moveUpBtn.style.margin = '5px'
+                                            moveUpBtn.style.textAlign = 'center'
+                                            moveUpBtn.innerHTML = '△'
+                                            var positionIndex = document.createElement('div')
+                                            positionIndex.className = 'pwContent'
+                                            positionIndex.id = `${doc.data().Web}${doc.data().Index}`
+                                            positionIndex.style.width = 'calc(30px + 1rem)'
+                                            positionIndex.style.padding = '10px 0'
+                                            positionIndex.style.margin = '5px'
+                                            positionIndex.style.textAlign = 'center'
+                                            positionIndex.innerHTML = doc.data().Index
+                                            var moveDownBtn = document.createElement('div')
+                                            moveDownBtn.className = 'pwContent link'
+                                            moveDownBtn.style.width = 'calc(30px + 1rem)'
+                                            moveDownBtn.style.padding = '10px 0'
+                                            moveDownBtn.style.margin = '5px'
+                                            moveDownBtn.style.textAlign = 'center'
+                                            moveDownBtn.innerHTML = '▽'
+                                            moveUpBtn.addEventListener('click', () => {
+                                                if (doc.data().Index !== 1) {
+                                                    db.collection('Password').where('Web', '==', doc.data().Web).where('Index', '==', Number(doc.data().Index) - 1).limit(1).get().then((snapshot) => {
+                                                        snapshot.forEach((doc) => {
+                                                            db.collection('Password').doc(doc.id).update({
+                                                                Index: Number(doc.data().Index) + 1
+                                                            })
+                                                        })
+                                                    })
                                                     db.collection('Password').doc(doc.id).update({
-                                                        Index: Number(doc.data().Index) + 1
+                                                        Index: Number(doc.data().Index) - 1
+                                                    })
+                                                }
+                                                var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
+                                                setTimeout(() => {
+                                                    pwListRefresh.click()
+                                                }, 500);
+                                            })
+                                            moveDownBtn.addEventListener('click', () => {
+                                                db.collection('Password').where('Web', '==', doc.data().Web).where('Index', '==', Number(doc.data().Index) + 1).limit(1).get().then((snapshot) => {
+                                                    snapshot.forEach((doc) => {
+                                                        db.collection('Password').doc(doc.id).update({
+                                                            Index: Number(doc.data().Index) - 1
+                                                        })
                                                     })
                                                 })
-                                            })
-                                            db.collection('Password').doc(doc.id).update({
-                                                Index: Number(doc.data().Index) - 1
-                                            })
-                                        }
-                                        var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
-                                        setTimeout(() => {
-                                            pwListRefresh.click()
-                                        }, 500);
-                                    })
-                                    moveDownBtn.addEventListener('click', () => {
-                                        db.collection('Password').where('Web', '==', doc.data().Web).where('Index', '==', Number(doc.data().Index) + 1).limit(1).get().then((snapshot) => {
-                                            snapshot.forEach((doc) => {
                                                 db.collection('Password').doc(doc.id).update({
-                                                    Index: Number(doc.data().Index) - 1
+                                                    Index: Number(doc.data().Index) + 1
                                                 })
+                                                var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
+                                                setTimeout(() => {
+                                                    pwListRefresh.click()
+                                                }, 500);
                                             })
-                                        })
-                                        db.collection('Password').doc(doc.id).update({
-                                            Index: Number(doc.data().Index) + 1
-                                        })
-                                        var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
-                                        setTimeout(() => {
-                                            pwListRefresh.click()
-                                        }, 500);
+                                            flexboxContainer.append(moveBtnContainer)
+                                            moveBtnContainer.append(moveUpBtn)
+                                            moveBtnContainer.append(positionIndex)
+                                            moveBtnContainer.append(moveDownBtn)
+                                        } else if (webNameModifyBtn.innerHTML == '✔') {
+                                            webNameModifyBtn.innerHTML = '改'
+                                            pwListTitle.contentEditable = 'false'
+                                            if (pwListTitle.innerHTML == '' || pwListTitle.innerHTML == '請輸入新網頁名稱') {
+                                                pwListTitle.innerHTML = doc.data().Web
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    pwListTitle.style.color = '#ffffff'
+                                                } else {
+                                                    pwListTitle.style.color = '#000000'
+                                                }
+                                            } else {
+                                                db.collection('Password').doc(doc.id).update({
+                                                    Web: pwListTitle.innerHTML,
+                                                })
+                                                setTimeout(() => {
+                                                    try {
+                                                        pwMgrBtnEle.forEach((ele) => {
+                                                            ele.click()
+                                                        })
+                                                    } catch (err) {}
+                                                }, 500);
+                                            }
+                                            flexboxContainer.removeChild(document.getElementById('movingBtnContainer'))
+                                        }
                                     })
-                                    flexboxContainer.append(moveBtnContainer)
-                                    moveBtnContainer.append(moveUpBtn)
-                                    moveBtnContainer.append(positionIndex)
-                                    moveBtnContainer.append(moveDownBtn)
                                 }
                             })
                         })
@@ -465,11 +548,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (searchBoxEle.innerHTML == '搜尋...') {
                     searchBoxEle.innerHTML = ''
                     searchBoxEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        searchBoxEle.style.color = '#ffffff'
+                    } else {
+                        searchBoxEle.style.color = '#000000'
+                    }
                 }
             })
             searchBoxEle.addEventListener('focusout', () => {
                 if (searchBoxEle.innerHTML == '') {
                     searchBoxEle.innerHTML = '搜尋...'
+                    searchBoxEle.style.color = '#aaaaaa'
                 }
             })
             searchBoxEle.addEventListener('keypress', (e) => {

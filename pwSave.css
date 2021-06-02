@@ -5,13 +5,13 @@
 }
 
 #pwSaveForm div {
-    padding: 10px 0 0;
+    padding: 2px 0;
     display: flex;
     justify-content: space-between;
 }
 
 #pwSaveForm span {
-    margin: auto 0;
+    margin: auto 5px auto 0;
 }
 
 #webSelectionForPwSave {

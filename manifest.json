@@ -1,0 +1,12 @@
+{
+    "name": "我的網頁",
+    "short_name": "我的網頁",
+    "start_url": ".",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "standalone",
+    "icons": [{
+        "src": "./icon.png",
+        "type": "image/png"
+    }]
+}

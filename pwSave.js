@@ -63,11 +63,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (webIfOtherForPwSaveEle.innerHTML == '其他網頁...') {
                     webIfOtherForPwSaveEle.innerHTML = ''
                     webIfOtherForPwSaveEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        webIfOtherForPwSaveEle.style.color = '#ffffff'
+                    } else {
+                        webIfOtherForPwSaveEle.style.color = '#000000'
+                    }
                 }
             })
             webIfOtherForPwSaveEle.addEventListener('focusout', () => {
                 if (webIfOtherForPwSaveEle.innerHTML == '') {
                     webIfOtherForPwSaveEle.innerHTML = '其他網頁...'
+                    webIfOtherForPwSaveEle.style.color = '#aaaaaa'
                 }
             })
             webIfOtherForPwSaveEle.addEventListener('keypress', (e) => {
@@ -79,11 +85,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (loginIDForPwSaveEle.innerHTML == '登入ID') {
                     loginIDForPwSaveEle.innerHTML = ''
                     loginIDForPwSaveEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        loginIDForPwSaveEle.style.color = '#ffffff'
+                    } else {
+                        loginIDForPwSaveEle.style.color = '#000000'
+                    }
                 }
             })
             loginIDForPwSaveEle.addEventListener('focusout', () => {
                 if (loginIDForPwSaveEle.innerHTML == '') {
                     loginIDForPwSaveEle.innerHTML = '登入ID'
+                    loginIDForPwSaveEle.style.color = '#aaaaaa'
                 }
             })
             loginIDForPwSaveEle.addEventListener('keypress', (e) => {
@@ -95,11 +107,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (loginPwForPwSaveEle.innerHTML == '登入密碼') {
                     loginPwForPwSaveEle.innerHTML = ''
                     loginPwForPwSaveEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        loginPwForPwSaveEle.style.color = '#ffffff'
+                    } else {
+                        loginPwForPwSaveEle.style.color = '#000000'
+                    }
                 }
             })
             loginPwForPwSaveEle.addEventListener('focusout', () => {
                 if (loginPwForPwSaveEle.innerHTML == '') {
                     loginPwForPwSaveEle.innerHTML = '登入密碼'
+                    loginPwForPwSaveEle.style.color = '#aaaaaa'
                 }
             })
             loginPwForPwSaveEle.addEventListener('keypress', (e) => {
@@ -111,11 +129,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (emailForPwSaveEle.innerHTML == '電郵') {
                     emailForPwSaveEle.innerHTML = ''
                     emailForPwSaveEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        emailForPwSaveEle.style.color = '#ffffff'
+                    } else {
+                        emailForPwSaveEle.style.color = '#000000'
+                    }
                 }
             })
             emailForPwSaveEle.addEventListener('focusout', () => {
                 if (emailForPwSaveEle.innerHTML == '') {
                     emailForPwSaveEle.innerHTML = '電郵'
+                    emailForPwSaveEle.style.color = '#aaaaaa'
                 }
             })
             emailForPwSaveEle.addEventListener('keypress', (e) => {
@@ -127,11 +151,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (phoneForPwSaveEle.innerHTML == '電話') {
                     phoneForPwSaveEle.innerHTML = ''
                     phoneForPwSaveEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        phoneForPwSaveEle.style.color = '#ffffff'
+                    } else {
+                        phoneForPwSaveEle.style.color = '#000000'
+                    }
                 }
             })
             phoneForPwSaveEle.addEventListener('focusout', () => {
                 if (phoneForPwSaveEle.innerHTML == '') {
                     phoneForPwSaveEle.innerHTML = '電話'
+                    phoneForPwSaveEle.style.color = '#aaaaaa'
                 }
             })
             phoneForPwSaveEle.addEventListener('keypress', (e) => {

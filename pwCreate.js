@@ -112,11 +112,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (webIfOtherForGenPwEle.innerHTML == '其他網頁...') {
                     webIfOtherForGenPwEle.innerHTML = ''
                     webIfOtherForGenPwEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        webIfOtherForGenPwEle.style.color = '#ffffff'
+                    } else {
+                        webIfOtherForGenPwEle.style.color = '#000000'
+                    }
                 }
             })
             webIfOtherForGenPwEle.addEventListener('focusout', () => {
                 if (webIfOtherForGenPwEle.innerHTML == '') {
                     webIfOtherForGenPwEle.innerHTML = '其他網頁...'
+                    webIfOtherForGenPwEle.style.color = '#aaaaaa'
                 }
             })
             webIfOtherForGenPwEle.addEventListener('keypress', (e) => {
@@ -128,11 +134,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (loginIDForGenPwEle.innerHTML == '登入ID') {
                     loginIDForGenPwEle.innerHTML = ''
                     loginIDForGenPwEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        loginIDForGenPwEle.style.color = '#ffffff'
+                    } else {
+                        loginIDForGenPwEle.style.color = '#000000'
+                    }
                 }
             })
             loginIDForGenPwEle.addEventListener('focusout', () => {
                 if (loginIDForGenPwEle.innerHTML == '') {
                     loginIDForGenPwEle.innerHTML = '登入ID'
+                    loginIDForGenPwEle.style.color = '#aaaaaa'
                 }
             })
             loginIDForGenPwEle.addEventListener('keypress', (e) => {
@@ -144,11 +156,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (emailForGenPwEle.innerHTML == '電郵') {
                     emailForGenPwEle.innerHTML = ''
                     emailForGenPwEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        emailForGenPwEle.style.color = '#ffffff'
+                    } else {
+                        emailForGenPwEle.style.color = '#000000'
+                    }
                 }
             })
             emailForGenPwEle.addEventListener('focusout', () => {
                 if (emailForGenPwEle.innerHTML == '') {
                     emailForGenPwEle.innerHTML = '電郵'
+                    emailForGenPwEle.style.color = '#aaaaaa'
                 }
             })
             emailForGenPwEle.addEventListener('keypress', (e) => {
@@ -160,11 +178,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 if (phoneForGenPwEle.innerHTML == '電話') {
                     phoneForGenPwEle.innerHTML = ''
                     phoneForGenPwEle.style.outlineStyle = 'none'
+                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                        phoneForGenPwEle.style.color = '#ffffff'
+                    } else {
+                        phoneForGenPwEle.style.color = '#000000'
+                    }
                 }
             })
             phoneForGenPwEle.addEventListener('focusout', () => {
                 if (phoneForGenPwEle.innerHTML == '') {
                     phoneForGenPwEle.innerHTML = '電話'
+                    phoneForGenPwEle.style.color = '#aaaaaa'
                 }
             })
             phoneForGenPwEle.addEventListener('keypress', (e) => {
