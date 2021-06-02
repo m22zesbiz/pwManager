@@ -1,6 +1,6 @@
 <!-- 
-    v3.1.3 of My HTML
-    - Hide sorting button
+    v3.1.4 of My HTML
+    - Adjust typing fields
 
     Forecast function:
     - News feed
@@ -47,9 +47,9 @@
             <div id='loginHeading' class='box'>登入</div>
             <div id='login-form' class='box'>
                 <span>電郵: </span>
-                <input type='text' id='emailForLogin' class='textField' placeholder='電郵' contenteditable='true'>
+                <input type='text' id='emailForLogin' class='textField' placeholder='電郵'>
                 <span>密碼: </span>
-                <input type='password' id='pwForLogin' class='textField' placeholder='密碼' contenteditable='true'>
+                <input type='password' id='pwForLogin' class='textField' placeholder='密碼'>
                 <button id='loginBtnForLogin'>登入</button>
             </div>
             <p id='loginMessage'></p>
@@ -63,7 +63,7 @@
                 <div id='countdown'></div>
             </div>
             <div id='function' class='box'>
-                <div id='functionHeading'>V3.1.3功能</div>
+                <div id='functionHeading'>V3.1.4功能</div>
                 <div id='functionsBox'>
                     <div class='pwMgrBtn link functions'>密碼管理</div>
                     <div class='pwSaveBtn link functions'>另存密碼</div>
@@ -74,7 +74,7 @@
         <section id='pwMgrScreen'>
             <div id='pwMgrHeading' class='box'>管理密碼</div>
             <div class='flexbox'>
-                <div id='searchBox' class='box' contenteditable='true'>搜尋...</div>
+                <input id='searchBox' class='box' placeholder="搜尋...">
                 <div style='width: 20px;'></div>
                 <select id='catFilter' class='box' style='border: 0; -webkit-appearance: none;'>
                     <option>全部類型</option>
@@ -101,12 +101,15 @@
         <section id='pwSaveScreen'>
             <div id='pwSaveHeading' class='box'>另存密碼</div>
             <div id='pwSaveForm' class='box'>
-                <div><span>網頁: </span><select name='web' id='webSelectionForPwSave' class='textField'></select></div>
+                <div><span>網頁: </span><select name='web' id='webSelectionForPwSave' class='textField'>
+                    <option>請選擇網頁</option>
+                </select></div>
                 <div style='justify-content: flex-end;'>
-                    <span id='webIfOtherForPwSave' class='textField' contenteditable='true'>其他網頁...</span>
+                    <input id='webIfOtherForPwSave' class='textField' placeholder="其他網頁...">
                 </div>
                 <div><span>類型: </span>
                     <select name='type' id='catForPwSave' class='textField' style='border: 0; -webkit-appearance: none;'>
+                        <option>請選擇類型</option>
                         <option>個人</option>
                         <option>社交</option>
                         <option>飲食</option>
@@ -122,19 +125,19 @@
                 </div>
                 <div>
                     <span>登入ID: </span>
-                    <span id='loginIDForPwSave' class='textField' contenteditable='true'>登入ID</span>
+                    <input id='loginIDForPwSave' class='textField' placeholder="登入ID">
                 </div>
                 <div>
                     <span>登入密碼: </span>
-                    <span id='loginPwForPwSave' class='textField' contenteditable='true'>登入密碼</span>
+                    <input id='loginPwForPwSave' class='textField' placeholder="登入密碼">
                 </div>
                 <div>
                     <span>電郵: </span>
-                    <span id='emailForPwSave' class='textField' contenteditable='true'>電郵</span>
+                    <input id='emailForPwSave' class='textField' placeholder="電郵">
                 </div>
                 <div>
                     <span>電話: </span>
-                    <span id='phoneForPwSave' class='textField' contenteditable='true'>電話</span>
+                    <input id='phoneForPwSave' class='textField' placeholder="電話">
                 </div>
                 <div>
                     <span>備註: </span>
@@ -160,7 +163,7 @@
             <div class='box'>
                 <div style='text-decoration: underline;'>密碼: </div>
                 <div class='flexbox'>
-                    <div id='showPwForGen' class='textField' style='color: #aaaaaa;'>請選擇密碼位數並創建</div>
+                    <div id='showPwForGen' class='textField'>請選擇密碼位數並創建</div>
                     <button id='copyGenPw' style='margin-left: 10px;'>複製</button>
                 </div>
             </div>
@@ -168,13 +171,16 @@
                 <div style='text-decoration: underline;'>另存密碼: </div>
                 <div>
                     <span>網頁: </span>
-                    <select name='webForGenPw' id='webSelectionForGenPw' class='textField'></select>
+                    <select name='webForGenPw' id='webSelectionForGenPw' class='textField'>
+                        <option>請選擇網頁</option>
+                    </select>
                 </div>
                 <div style='justify-content: flex-end;'>
-                    <span id='webIfOtherForGenPw' class='textField' contenteditable='true'>其他網頁...</span>
+                    <input id='webIfOtherForGenPw' class='textField' placeholder="其他網頁...">
                 </div>
                 <div><span>類型: </span>
                     <select name='type' id='catForGenPw' class='textField' style='border: 0; -webkit-appearance: none;'>
+                        <option>請選擇類型</option>
                         <option>個人</option>
                         <option>社交</option>
                         <option>飲食</option>
@@ -190,15 +196,15 @@
                 </div>
                 <div>
                     <span>登入ID: </span>
-                    <span id='loginIDForGenPw' class='textField' contenteditable='true'>登入ID</span>
+                    <input id='loginIDForGenPw' class='textField' placeholder="登入ID">
                 </div>
                 <div>
                     <span>電郵: </span>
-                    <span id='emailForGenPw' class='textField' contenteditable='true'>電郵</span>
+                    <input id='emailForGenPw' class='textField' placeholder="電郵">
                 </div>
                 <div>
                     <span>電話: </span>
-                    <span id='phoneForGenPw' class='textField' contenteditable='true'>電話</span>
+                    <input id='phoneForGenPw' class='textField' placeholder="電話">
                 </div>
                 <div>
                     <span>備註: </span>

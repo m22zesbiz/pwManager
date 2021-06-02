@@ -18,7 +18,8 @@ window.addEventListener('DOMContentLoaded', function() {
                 pwSaveScreenEle.style.display = 'none'
                 pwCreateScreenEle.style.display = 'none'
             }, 500);
-            searchBoxEle.innerHTML = '搜尋...'
+            searchBoxEle.value = ''
+            catFilterEle.selectedIndex = 0
             while (pwDetailEle.firstChild) {
                 pwDetailEle.removeChild(pwDetailEle.firstChild)
             }
@@ -123,6 +124,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                     deleteButton.innerHTML = '刪除'
                                     deleteButton.style.margin = '2px'
                                     deleteButton.style.flex = 1
+                                    flexbox.append(copyIDButton)
+                                    flexbox.append(copyPasswordButton)
+                                    flexbox.append(brForFlex)
+                                    flexbox.append(modifyButton)
+                                    flexbox.append(deleteButton)
                                     copyIDButton.addEventListener('click', function() {
                                         copyDivToClipboard(doc.data().ID)
                                     })
@@ -136,31 +142,27 @@ window.addEventListener('DOMContentLoaded', function() {
                                         div.className = 'flexbox alertBox'
                                         var loginIDForModifyLabel = document.createElement('span')
                                         loginIDForModifyLabel.innerHTML = '登入ID'
-                                        var loginIDForModifyInput = document.createElement('div')
+                                        var loginIDForModifyInput = document.createElement('input')
                                         loginIDForModifyInput.className = 'textField'
-                                        loginIDForModifyInput.innerHTML = '登入ID'
-                                        loginIDForModifyInput.contentEditable = 'true'
+                                        loginIDForModifyInput.placeholder = '登入ID'
                                         loginIDForModifyInput.style.width = '200px'
                                         var loginPwForModifyLabel = document.createElement('span')
                                         loginPwForModifyLabel.innerHTML = '登入密碼'
-                                        var loginPwForModifyInput = document.createElement('div')
+                                        var loginPwForModifyInput = document.createElement('input')
                                         loginPwForModifyInput.className = 'textField'
-                                        loginPwForModifyInput.innerHTML = '登入密碼'
-                                        loginPwForModifyInput.contentEditable = 'true'
+                                        loginPwForModifyInput.placeholder = '登入密碼'
                                         loginPwForModifyInput.style.width = '200px'
                                         var emailForModifyLabel = document.createElement('span')
                                         emailForModifyLabel.innerHTML = '電郵'
-                                        var emailForModifyInput = document.createElement('div')
+                                        var emailForModifyInput = document.createElement('input')
                                         emailForModifyInput.className = 'textField'
-                                        emailForModifyInput.innerHTML = '電郵'
-                                        emailForModifyInput.contentEditable = 'true'
+                                        emailForModifyInput.placeholder = '電郵'
                                         emailForModifyInput.style.width = '200px'
                                         var phoneForModifyLabel = document.createElement('span')
                                         phoneForModifyLabel.innerHTML = '電話'
-                                        var phoneForModifyInput = document.createElement('div')
+                                        var phoneForModifyInput = document.createElement('input')
                                         phoneForModifyInput.className = 'textField'
-                                        phoneForModifyInput.innerHTML = '電話'
-                                        phoneForModifyInput.contentEditable = 'true'
+                                        phoneForModifyInput.placeholder = '電話'
                                         phoneForModifyInput.style.width = '200px'
                                         var memoForModifyLabel = document.createElement('span')
                                         memoForModifyLabel.innerHTML = '備註'
@@ -180,106 +182,32 @@ window.addEventListener('DOMContentLoaded', function() {
                                         cancelBtnForModify.style.width = '80px'
                                         var modifyStatus = document.createElement('div')
                                         modifyStatus.style.display = 'none'
-                                        loginIDForModifyInput.addEventListener('focus', () => {
-                                            if (loginIDForModifyInput.innerHTML == '登入ID') {
-                                                loginIDForModifyInput.innerHTML = ''
-                                                loginIDForModifyInput.style.outlineStyle = 'none'
-                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                                    loginIDForModifyInput.style.color = '#ffffff'
-                                                } else {
-                                                    loginIDForModifyInput.style.color = '#000000'
-                                                }
-                                            }
-                                        })
-                                        loginIDForModifyInput.addEventListener('focusout', () => {
-                                            if (loginIDForModifyInput.innerHTML == '') {
-                                                loginIDForModifyInput.innerHTML = '登入ID'
-                                                loginIDForModifyInput.style.color = '#aaaaaa'
-                                            }
-                                        })
-                                        loginIDForModifyInput.addEventListener('keypress', (e) => {
-                                            if (e.which == 13) {
-                                                e.preventDefault()
-                                            }
-                                        })
-                                        loginPwForModifyInput.addEventListener('focus', () => {
-                                            if (loginPwForModifyInput.innerHTML == '登入密碼') {
-                                                loginPwForModifyInput.innerHTML = ''
-                                                loginPwForModifyInput.style.outlineStyle = 'none'
-                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                                    loginPwForModifyInput.style.color = '#ffffff'
-                                                } else {
-                                                    loginPwForModifyInput.style.color = '#000000'
-                                                }
-                                            }
-                                        })
-                                        loginPwForModifyInput.addEventListener('focusout', () => {
-                                            if (loginPwForModifyInput.innerHTML == '') {
-                                                loginPwForModifyInput.innerHTML = '登入密碼'
-                                                loginPwForModifyInput.style.color = '#aaaaaa'
-                                            }
-                                        })
-                                        loginPwForModifyInput.addEventListener('keypress', (e) => {
-                                            if (e.which == 13) {
-                                                e.preventDefault()
-                                            }
-                                        })
-                                        emailForModifyInput.addEventListener('focus', () => {
-                                            if (emailForModifyInput.innerHTML == '電郵') {
-                                                emailForModifyInput.innerHTML = ''
-                                                emailForModifyInput.style.outlineStyle = 'none'
-                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                                    emailForModifyInput.style.color = '#ffffff'
-                                                } else {
-                                                    emailForModifyInput.style.color = '#000000'
-                                                }
-                                            }
-                                        })
-                                        emailForModifyInput.addEventListener('focusout', () => {
-                                            if (emailForModifyInput.innerHTML == '') {
-                                                emailForModifyInput.innerHTML = '電郵'
-                                                emailForModifyInput.style.color = '#aaaaaa'
-                                            }
-                                        })
-                                        emailForModifyInput.addEventListener('keypress', (e) => {
-                                            if (e.which == 13) {
-                                                e.preventDefault()
-                                            }
-                                        })
-                                        phoneForModifyInput.addEventListener('focus', () => {
-                                            if (phoneForModifyInput.innerHTML == '電話') {
-                                                phoneForModifyInput.innerHTML = ''
-                                                phoneForModifyInput.style.outlineStyle = 'none'
-                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                                    phoneForModifyInput.style.color = '#ffffff'
-                                                } else {
-                                                    phoneForModifyInput.style.color = '#000000'
-                                                }
-                                            }
-                                        })
-                                        phoneForModifyInput.addEventListener('focusout', () => {
-                                            if (phoneForModifyInput.innerHTML == '') {
-                                                phoneForModifyInput.innerHTML = '電話'
-                                                phoneForModifyInput.style.color = '#aaaaaa'
-                                            }
-                                        })
-                                        phoneForModifyInput.addEventListener('keypress', (e) => {
-                                            if (e.which == 13) {
-                                                e.preventDefault()
-                                            }
-                                        })
+                                        pwMgrScreenEle.append(alertBoxBackground)
+                                        alertBoxBackground.append(div)
+                                        div.append(loginIDForModifyLabel)
+                                        div.append(loginIDForModifyInput)
+                                        div.append(loginPwForModifyLabel)
+                                        div.append(loginPwForModifyInput)
+                                        div.append(emailForModifyLabel)
+                                        div.append(emailForModifyInput)
+                                        div.append(phoneForModifyLabel)
+                                        div.append(phoneForModifyInput)
+                                        div.append(memoForModifyLabel)
+                                        div.append(memoForModifyInput)
+                                        div.append(submitBtnForModify)
+                                        div.append(cancelBtnForModify)
+                                        div.append(modifyStatus)
                                         submitBtnForModify.addEventListener('click', () => {
-                                            event.preventDefault()
                                             var date = new Date()
                                             var modifyData = {
-                                                LoginID: loginIDForModifyInput.innerHTML,
-                                                LoginPw: loginPwForModifyInput.innerHTML,
-                                                Email: emailForModifyInput.innerHTML,
-                                                Phone: phoneForModifyInput.innerHTML,
+                                                LoginID: loginIDForModifyInput.value,
+                                                LoginPw: loginPwForModifyInput.value,
+                                                Email: emailForModifyInput.value,
+                                                Phone: phoneForModifyInput.value,
                                                 Memo: memoForModifyInput.value,
                                                 OriginalPw: doc.data().Password,
                                             }
-                                            if ((!modifyData.LoginID || modifyData.LoginID == '登入ID') && (!modifyData.LoginPw || modifyData.LoginPw == '登入密碼') && (!modifyData.Email || modifyData.Email == '電郵') && (!modifyData.Phone || modifyData.Phone == '電話') && (!modifyData.Memo || modifyData.Memo == '')) {
+                                            if ((!modifyData.LoginID || modifyData.LoginID == '') && (!modifyData.LoginPw || modifyData.LoginPw == '') && (!modifyData.Email || modifyData.Email == '') && (!modifyData.Phone || modifyData.Phone == '') && (!modifyData.Memo || modifyData.Memo == '')) {
                                                 modifyStatus.style.display = 'block'
                                                 modifyStatus.innerHTML = '請輸入資料!!!'
                                                 setTimeout(() => {
@@ -288,25 +216,25 @@ window.addEventListener('DOMContentLoaded', function() {
                                                 }, 3000);
                                             } else {
                                                 var modifyItems = ''
-                                                if (modifyData.LoginID && modifyData.LoginID != '登入ID') {
+                                                if (modifyData.LoginID) {
                                                     db.collection('Password').doc(doc.id).update({
                                                         ID: modifyData.LoginID,
                                                     })
                                                     modifyItems = modifyItems + '登入ID及'
                                                 }
-                                                if (modifyData.LoginPw && modifyData.LoginPw != '登入密碼') {
+                                                if (modifyData.LoginPw) {
                                                     db.collection('Password').doc(doc.id).update({
                                                         Password: modifyData.LoginPw,
                                                     })
                                                     modifyItems = modifyItems + '登入密碼及'
                                                 }
-                                                if (modifyData.Email && modifyData.Email != '電郵') {
+                                                if (modifyData.Email) {
                                                     db.collection('Password').doc(doc.id).update({
                                                         Email: modifyData.Email,
                                                     })
                                                     modifyItems = modifyItems + '電郵及'
                                                 }
-                                                if (modifyData.Phone && modifyData.Phone != '電話') {
+                                                if (modifyData.Phone) {
                                                     db.collection('Password').doc(doc.id).update({
                                                         Phone: modifyData.Phone,
                                                     })
@@ -339,14 +267,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                                 setTimeout(() => {
                                                     modifyStatus.style.display = 'none'
                                                     modifyStatus.innerHTML = ''
-                                                    loginIDForModifyInput.innerHTML = '登入ID'
-                                                    loginIDForModifyInput.style.color = '#aaaaaa'
-                                                    loginPwForModifyInput.innerHTML = '登入密碼'
-                                                    loginPwForModifyInput.style.color = '#aaaaaa'
-                                                    emailForModifyInput.innerHTML = '電郵'
-                                                    emailForModifyInput.style.color = '#aaaaaa'
-                                                    phoneForModifyInput.innerHTML = '電話'
-                                                    phoneForModifyInput.style.color = '#aaaaaa'
+                                                    loginIDForModifyInput.value = ''
+                                                    loginPwForModifyInput.value = ''
+                                                    emailForModifyInput.value = ''
+                                                    phoneForModifyInput.value = ''
                                                     memoForModifyInput.value = ''
                                                     alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                                     var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
@@ -360,27 +284,13 @@ window.addEventListener('DOMContentLoaded', function() {
                                             }
                                         })
                                         cancelBtnForModify.addEventListener('click', () => {
-                                            loginIDForModifyInput.innerHTML = '登入ID'
-                                            loginIDForModifyInput.style.color = '#aaaaaa'
-                                            loginPwForModifyInput.innerHTML = '登入密碼'
-                                            loginPwForModifyInput.style.color = '#aaaaaa'
+                                            loginIDForModifyInput.value = ''
+                                            loginPwForModifyInput.value = ''
+                                            emailForModifyInput.value = ''
+                                            phoneForModifyInput.value = ''
+                                            memoForModifyInput.value = ''
                                             alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                         })
-                                        pwMgrScreenEle.append(alertBoxBackground)
-                                        alertBoxBackground.append(div)
-                                        div.append(loginIDForModifyLabel)
-                                        div.append(loginIDForModifyInput)
-                                        div.append(loginPwForModifyLabel)
-                                        div.append(loginPwForModifyInput)
-                                        div.append(emailForModifyLabel)
-                                        div.append(emailForModifyInput)
-                                        div.append(phoneForModifyLabel)
-                                        div.append(phoneForModifyInput)
-                                        div.append(memoForModifyLabel)
-                                        div.append(memoForModifyInput)
-                                        div.append(submitBtnForModify)
-                                        div.append(cancelBtnForModify)
-                                        div.append(modifyStatus)
                                     })
                                     deleteButton.addEventListener('click', function() {
                                         var alertBoxBackground = document.createElement('div')
@@ -400,15 +310,20 @@ window.addEventListener('DOMContentLoaded', function() {
                                         deleteNoButton.innerHTML = '否'
                                         deleteNoButton.style.margin = '0 10px'
                                         deleteNoButton.style.width = '80px'
+                                        pwMgrScreenEle.append(alertBoxBackground)
+                                        alertBoxBackground.append(div)
+                                        div.append(alertText)
+                                        div.append(deleteYesButton)
+                                        div.append(deleteNoButton)
                                         deleteYesButton.addEventListener('click', () => {
-                                            var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
                                             db.collection('Password').doc(doc.id).delete()
+                                            var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
                                             alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                             setTimeout(() => {
-                                                pwMgrBtnEle.forEach((ele) => {
-                                                    ele.click()
-                                                })
                                                 try {
+                                                    pwMgrBtnEle.forEach((ele) => {
+                                                        ele.click()
+                                                    })
                                                     pwListRefresh.click()
                                                 } catch (err) {}
                                             }, 100);
@@ -416,17 +331,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                         deleteNoButton.addEventListener('click', () => {
                                             alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                         })
-                                        pwMgrScreenEle.append(alertBoxBackground)
-                                        alertBoxBackground.append(div)
-                                        div.append(alertText)
-                                        div.append(deleteYesButton)
-                                        div.append(deleteNoButton)
                                     })
-                                    flexbox.append(copyIDButton)
-                                    flexbox.append(copyPasswordButton)
-                                    flexbox.append(brForFlex)
-                                    flexbox.append(modifyButton)
-                                    flexbox.append(deleteButton)
                                     var moveBtnContainer = document.createElement('div')
                                     moveBtnContainer.className = 'flexbox movingBtnContainer'
                                     moveBtnContainer.style.display = 'none'
@@ -454,6 +359,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                     moveDownBtn.style.margin = '5px'
                                     moveDownBtn.style.textAlign = 'center'
                                     moveDownBtn.innerHTML = '▽'
+                                    flexboxContainer.append(moveBtnContainer)
+                                    moveBtnContainer.append(moveUpBtn)
+                                    moveBtnContainer.append(positionIndex)
+                                    moveBtnContainer.append(moveDownBtn)
                                     moveUpBtn.addEventListener('click', () => {
                                         if (doc.data().Index !== 1) {
                                             db.collection('Password').where('Web', '==', doc.data().Web).where('Index', '==', Number(doc.data().Index) - 1).limit(1).get().then((snapshot) => {
@@ -488,10 +397,6 @@ window.addEventListener('DOMContentLoaded', function() {
                                             pwListRefresh.click()
                                         }, 500);
                                     })
-                                    flexboxContainer.append(moveBtnContainer)
-                                    moveBtnContainer.append(moveUpBtn)
-                                    moveBtnContainer.append(positionIndex)
-                                    moveBtnContainer.append(moveDownBtn)
                                 }
                             })
                         })
@@ -557,37 +462,15 @@ window.addEventListener('DOMContentLoaded', function() {
                     })
                 })
             })
-            searchBoxEle.addEventListener('focus', () => {
-                if (searchBoxEle.innerHTML == '搜尋...') {
-                    searchBoxEle.innerHTML = ''
-                    searchBoxEle.style.outlineStyle = 'none'
-                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                        searchBoxEle.style.color = '#ffffff'
-                    } else {
-                        searchBoxEle.style.color = '#000000'
-                    }
-                }
-            })
-            searchBoxEle.addEventListener('focusout', () => {
-                if (searchBoxEle.innerHTML == '') {
-                    searchBoxEle.innerHTML = '搜尋...'
-                    searchBoxEle.style.color = '#aaaaaa'
-                }
-            })
-            searchBoxEle.addEventListener('keypress', (e) => {
-                if (e.which == 13) {
-                    e.preventDefault()
-                }
-            })
             var events = ['input', 'change', 'cut', 'copy', 'paste', 'keypress']
             events.forEach((event) => {
                 searchBoxEle.addEventListener(event, () => {
                     var webs = document.querySelectorAll('.web')
                     webs.forEach((web) => {
-                        if (searchBoxEle.innerHTML == '') {
+                        if (searchBoxEle.value == '') {
                             web.style.display = 'block'
                         } else {
-                            if (!web.innerHTML.toLowerCase().includes(searchBoxEle.innerHTML.toLowerCase())) {
+                            if (!web.innerHTML.toLowerCase().includes(searchBoxEle.value.toLowerCase())) {
                                 web.style.display = 'none'
                             } else {
                                 web.style.display = 'block'

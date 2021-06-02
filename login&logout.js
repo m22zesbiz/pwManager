@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var pwForLoginEle = document.querySelector('#pwForLogin')
     var loginBtnForLoginEle = document.querySelector('#loginBtnForLogin')
     var loginMessageEle = document.querySelector('#loginMessage')
+
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var email = firebase.auth().currentUser.email
@@ -19,11 +20,20 @@ window.addEventListener('DOMContentLoaded', function() {
             loginScreenEle.style.display = 'block'
         }
     });
+
     emailForLoginEle.addEventListener('keypress', (e) => {
         if (e.which == 13) {
             e.preventDefault()
+            loginBtnForLoginEle.click()
         }
     })
+    pwForLoginEle.addEventListener('keypress', (e) => {
+        if (e.which == 13) {
+            e.preventDefault()
+            loginBtnForLoginEle.click()
+        }
+    })
+
     loginBtnForLoginEle.addEventListener('click', function(event) {
         event.preventDefault()
         var loginFormData = {
