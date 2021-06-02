@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                             <span>電話: </span>
                                             <div class='pw textField'>${doc.data().Phone}</div>
                                             <span>備註: </span>
-                                            <div class='pw textField'>${doc.data().Memo}</div>
+                                            <div class='pw textField' style="white-space: pre-line">${doc.data().Memo}</div>
                                             `
                                     div.append(pwContent)
                                     var flexbox = document.createElement('div')
