@@ -54,6 +54,14 @@ body {
     border-radius: 25px;
 }
 
+[type=radio] {
+    -webkit-appearance: radio;
+}
+
+[type=checkbox] {
+    -webkit-appearance: checkbox;
+}
+
 button {
     background-color: rgba(180, 248, 200, 0.2);
     box-shadow: 0 0 5px #cccccc;
