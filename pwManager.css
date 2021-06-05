@@ -60,7 +60,7 @@
 
 .alertBoxBackground {
     background: rgba(0, 0, 0, 0.4);
-    height: calc(100vh - 67px - 39px);
+    height: calc(100vh - 68px - 50px); 
     width: 100%;
     position: absolute;
     top: 67px;
