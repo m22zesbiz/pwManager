@@ -92,9 +92,9 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var pwContent = document.createElement('div')
                                     pwContent.innerHTML = `
                                             <span>登入ID: </span>
-                                            <div id='${doc.data().Web + doc.data().ID}' class='pw textField'>${doc.data().ID}</div>
+                                            <div id='${"I" + doc.data().ID + "D"}' class='pw textField'>${doc.data().ID}</div>
                                             <span>登入密碼: </span>
-                                            <div id='${doc.data().Web + doc.data().Password}' class='pw textField'>${doc.data().Password}</div>
+                                            <div id='${"Pass" + doc.data().Password + "word"}' class='pw textField'>${doc.data().Password}</div>
                                             <span>電郵: </span>
                                             <div class='pw textField'>${doc.data().Email}</div>
                                             <span>電話: </span>
@@ -132,10 +132,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                     flexbox.append(modifyButton)
                                     flexbox.append(deleteButton)
                                     copyIDButton.addEventListener('click', function() {
-                                        copyDivToClipboard(doc.data().Web + doc.data().ID)
+                                        copyDivToClipboard("I" + doc.data().ID + "D")
                                     })
                                     copyPasswordButton.addEventListener('click', function() {
-                                        copyDivToClipboard(doc.data().Web + doc.data().Password.replace('&amp;', '&'))
+                                        copyDivToClipboard("Pass" + doc.data().Password + "word")
                                     })
                                     modifyButton.addEventListener('click', () => {
                                         var alertBoxBackground = document.createElement('div')
