@@ -436,7 +436,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                                 ele.click()
                                             })
                                         } catch (err) {}
-                                    }, 500);
+                                    }, 1000);
                                 }
                             }
                         })
