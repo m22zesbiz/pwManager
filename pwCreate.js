@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         })
 
-        copyGenPwEle.addEventListener('click', copyDivToClipboard('showPwForGen'))
+        copyGenPwEle.addEventListener('click', () => {copyDivToClipboard('showPwForGen')})
 
         saveBtnForGenPwEle.addEventListener('click', () => {
             var savePwDataForGenPw = {
