@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', function() {
             pwGenFormEle.reset()
             refreshWebSelectionForPwGen()
         })
+})
         pwGenFormEle.addEventListener('submit', (e) => {
             e.preventDefault()
             var numOfDigits = pwGenFormEle.numOfDigits.value
@@ -214,4 +215,3 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         })
     })
-})
