@@ -62,11 +62,13 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                         var pwListHeading = document.createElement('div')
                         pwListHeading.className = 'flexbox'
-                        var pwListTitle = document.createElement('div')
+                        var pwListTitle = document.createElement('input')
                         pwListTitle.className = 'pwContent'
                         pwListTitle.style.padding = '5px 15px'
                         pwListTitle.style.flex = '1'
-                        pwListTitle.innerHTML = div.innerHTML
+                        pwListTitle.placeholder = '請輸入新網頁名稱'
+                        pwListTitle.readOnly = true
+                        pwListTitle.value = div.innerHTML
                         var webNameModifyBtn = document.createElement('span')
                         webNameModifyBtn.className = 'pwContent link'
                         webNameModifyBtn.style.width = 'calc(30px + 1rem)'
@@ -400,43 +402,21 @@ window.addEventListener('DOMContentLoaded', function() {
                                 }
                             })
                         })
-                        var originalWebName = pwListTitle.innerHTML
+                        var originalWebName = pwListTitle.value
                         webNameModifyBtn.addEventListener('click', () => {
                             if (webNameModifyBtn.innerHTML == '改') {
-                                webNameModifyBtn.innerHTML = '✔'
-                                pwListTitle.contentEditable = 'true'
-                                pwListTitle.innerHTML = '請輸入新網頁名稱'
-                                pwListTitle.style.color = '#aaaaaa'
-                                pwListTitle.addEventListener('focus', () => {
-                                    if (pwListTitle.innerHTML == '請輸入新網頁名稱') {
-                                        pwListTitle.innerHTML = ''
-                                        if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                            pwListTitle.style.color = '#ffffff'
-                                        } else {
-                                            pwListTitle.style.color = '#000000'
-                                        }
-                                    }
-                                })
-                                pwListTitle.addEventListener('focusout', () => {
-                                    if (pwListTitle.innerHTML == '') {
-                                        pwListTitle.innerHTML = '請輸入新網頁名稱'
-                                        pwListTitle.style.color = '#aaaaaa'
-                                    }
-                                })
+                                webNameModifyBtn.innerHTML = '✔︎'
+                                pwListTitle.readOnly = false
+                                pwListTitle.value = ''
                                 var moveBtnContainerEle = document.querySelectorAll('.movingBtnContainer')
                                 moveBtnContainerEle.forEach(ele => {
                                     ele.style.display = 'block'
                                 })
-                            } else if (webNameModifyBtn.innerHTML == '✔') {
+                            } else if (webNameModifyBtn.innerHTML == '✔︎') {
                                 webNameModifyBtn.innerHTML = '改'
-                                pwListTitle.contentEditable = 'false'
-                                if (pwListTitle.innerHTML == '' || pwListTitle.innerHTML == '請輸入新網頁名稱') {
-                                    pwListTitle.innerHTML = originalWebName
-                                    if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                        pwListTitle.style.color = '#ffffff'
-                                    } else {
-                                        pwListTitle.style.color = '#000000'
-                                    }
+                                pwListTitle.readOnly = true
+                                if (pwListTitle.value == '' || pwListTitle.value == '請輸入新網頁名稱') {
+                                    pwListTitle.value = originalWebName
                                     var moveBtnContainerEle = document.querySelectorAll('.movingBtnContainer')
                                     moveBtnContainerEle.forEach(ele => {
                                         ele.style.display = 'none'
@@ -445,7 +425,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                     db.collection('Password').where('Web', '==', originalWebName).get().then(snapshot => {
                                         snapshot.forEach(doc => {
                                             db.collection('Password').doc(doc.id).update({
-                                                Web: pwListTitle.innerHTML,
+                                                Web: pwListTitle.value,
                                             })
                                         })
                                     })
