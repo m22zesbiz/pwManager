@@ -415,7 +415,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             } else if (webNameModifyBtn.innerHTML == '✔︎') {
                                 webNameModifyBtn.innerHTML = '改'
                                 pwListTitle.readOnly = true
-                                if (pwListTitle.value == '' || pwListTitle.value == '請輸入新網頁名稱') {
+                                if (pwListTitle.value.length < 1 || pwListTitle.value == '請輸入新網頁名稱' || pwListTitle.value.includes('@') || pwListTitle.value.startsWith('0') || pwListTitle.value.startsWith('1') || pwListTitle.value.startsWith('2') || pwListTitle.value.startsWith('3') || pwListTitle.value.startsWith('4') || pwListTitle.value.startsWith('5') || pwListTitle.value.startsWith('6') || pwListTitle.value.startsWith('7') || pwListTitle.value.startsWith('8') || pwListTitle.value.startsWith('9')) {
                                     pwListTitle.value = originalWebName
                                     var moveBtnContainerEle = document.querySelectorAll('.movingBtnContainer')
                                     moveBtnContainerEle.forEach(ele => {
@@ -426,6 +426,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                         snapshot.forEach(doc => {
                                             db.collection('Password').doc(doc.id).update({
                                                 Web: pwListTitle.value,
+                                                OriginalWeb: originalWebName,
                                             })
                                         })
                                     })
