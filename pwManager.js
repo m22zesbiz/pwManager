@@ -132,10 +132,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                     flexbox.append(modifyButton)
                                     flexbox.append(deleteButton)
                                     copyIDButton.addEventListener('click', function() {
-                                        copyDivToClipboard("I" + doc.data().ID + "D")
+                                        copyDivToClipboard("I" + doc.data().ID.replace('&amp;', '&') + "D")
                                     })
                                     copyPasswordButton.addEventListener('click', function() {
-                                        copyDivToClipboard("Pass" + doc.data().Password + "word")
+                                        copyDivToClipboard("Pass" + doc.data().Password.replace('&amp;', '&') + "word")
                                     })
                                     modifyButton.addEventListener('click', () => {
                                         var alertBoxBackground = document.createElement('div')
