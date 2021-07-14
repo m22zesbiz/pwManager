@@ -38,6 +38,7 @@ function copyDivToClipboard(eleID) {
 
 document.body.addEventListener('touchmove', (e) => {
     e.preventDefault()
+    console.log('Disable scrolling')
 }, { passive: false })
 
 // Service Worker
