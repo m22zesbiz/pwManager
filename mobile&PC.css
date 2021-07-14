@@ -3,10 +3,10 @@
 @media screen and (max-width: 650px) {
     #webList {
         width: 110px;
-        height: calc(100vh - 46px - 68px - 30px - 45px - 45px - 30px - 50px);
+        height: calc(100vh - 46px - 68px - 15px - 45px - 45px - 15px - 50px);
     }
     #pwDetail {
-        height: calc(100vh - 46px - 68px - 30px - 45px - 45px - 30px - 50px);
+        height: calc(100vh - 46px - 68px - 15px - 45px - 45px - 15px - 50px);
     }
 }
 
