@@ -36,11 +36,6 @@ function copyDivToClipboard(eleID) {
     window.getSelection().removeAllRanges(); // to deselect
 }
 
-document.body.addEventListener('touchmove', (e) => {
-    e.preventDefault()
-    console.log('Disable scrolling')
-}, { passive: false })
-
 // Service Worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(registration => {

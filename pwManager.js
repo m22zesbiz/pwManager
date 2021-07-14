@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Password Manager
-    var pwListEle = document.querySelector('#pwList')
     var webListEle = document.querySelector('#webList')
     var pwDetailEle = document.querySelector('#pwDetail')
     var searchBoxEle = document.querySelector('#searchBox')
@@ -474,14 +473,6 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 })
-            })
-            webListEle.removeEventListener('touchmove', (e) => {
-                e.preventDefault()
-                console.log('Enable scrolling on web list')
-            })
-            pwDetailEle.removeEventListener('touchmove', (e) => {
-                e.preventDefault()
-                console.log('Enable scrolling on pw detail')
             })
         })
     })
