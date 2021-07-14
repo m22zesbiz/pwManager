@@ -475,7 +475,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     }
                 })
             })
-            pwListEle.removeEventListener('touchmove', (e) => {
+            webListEle.removeEventListener('touchmove', (e) => {
+                e.preventDefault()
+            })
+            pwDetailEle.removeEventListener('touchmove', (e) => {
                 e.preventDefault()
             })
         })
