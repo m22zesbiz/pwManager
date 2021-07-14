@@ -36,6 +36,10 @@ function copyDivToClipboard(eleID) {
     window.getSelection().removeAllRanges(); // to deselect
 }
 
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault()
+})
+
 // Service Worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").then(registration => {
