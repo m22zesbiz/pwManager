@@ -36,7 +36,7 @@ function copyDivToClipboard(eleID) {
     window.getSelection().removeAllRanges(); // to deselect
 }
 
-document.addEventListener('touchmove', (e) => {
+document..addEventListener('touchmove', (e) => {
     e.preventDefault()
 })
 
