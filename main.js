@@ -38,7 +38,7 @@ function copyDivToClipboard(eleID) {
 
 document.body.addEventListener('touchmove', (e) => {
     e.preventDefault()
-})
+}, { passive: false })
 
 // Service Worker
 if ("serviceWorker" in navigator) {
