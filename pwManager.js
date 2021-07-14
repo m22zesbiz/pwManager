@@ -477,9 +477,11 @@ window.addEventListener('DOMContentLoaded', function() {
             })
             webListEle.removeEventListener('touchmove', (e) => {
                 e.preventDefault()
+                console.log('Enable scrolling on web list')
             })
             pwDetailEle.removeEventListener('touchmove', (e) => {
                 e.preventDefault()
+                console.log('Enable scrolling on pw detail')
             })
         })
     })
