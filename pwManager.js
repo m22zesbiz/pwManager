@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Password Manager
+    var pwListEle = document.querySelector('#pwList')
     var webListEle = document.querySelector('#webList')
     var pwDetailEle = document.querySelector('#pwDetail')
     var searchBoxEle = document.querySelector('#searchBox')
@@ -473,6 +474,9 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 })
+            })
+            pwListEle.removeEventListener('touchmove', (e) => {
+                e.preventDefault()
             })
         })
     })
