@@ -22,7 +22,7 @@
 }
 
 #webList {
-    height: calc(100vh - 68px - 30px - 60px - 60px - 30px - 50px);
+    height: calc(100vh - 68px - 30px - 45px - 45px - 30px - 50px);
     padding-right: 5px;
     width: 250px;
     border-right: 1px solid #cccccc;
@@ -39,7 +39,7 @@
 
 #pwDetail {
     padding: 5px 0;
-    height: calc(100vh - 68px - 30px - 60px - 60px - 30px - 50px);
+    height: calc(100vh - 68px - 30px - 45px - 45px - 30px - 50px);
     flex: 1;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -60,7 +60,7 @@
 
 .alertBoxBackground {
     background: rgba(0, 0, 0, 0.4);
-    height: calc(100vh - 68px - 50px); 
+    height: calc(100vh - 68px - 50px);
     width: 100%;
     position: absolute;
     top: 67px;

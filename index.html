@@ -1,6 +1,7 @@
 <!-- 
-    v3.1.5 of My HTML
-    - Fix copy password bug
+    v3.2 of My HTML
+    - Disable scrolling
+    - Update UI
 
     Forecast function:
     - News feed
@@ -63,7 +64,7 @@
                 <div id='countdown'></div>
             </div>
             <div id='function' class='box'>
-                <div id='functionHeading'>V3.1.5功能</div>
+                <div id='functionHeading'>V3.2功能</div>
                 <div id='functionsBox'>
                     <div class='pwMgrBtn link functions'>密碼管理</div>
                     <div class='pwSaveBtn link functions'>另存密碼</div>
@@ -151,22 +152,24 @@
             <div id='pwCreateHeading' class='box'>創建密碼</div>
             <form id='pwGenForm' class='box'>
                 <label style='text-decoration: underline;'>密碼位數: </label><br>
-                <input type='radio' name='numOfDigits' id='genFor8Digits' value='8' style='margin-top: 5px;'>
-                <span>8位</span>
-                <input type='radio' name='numOfDigits' id='genFor10Digits' value='10'> <span>10位</span>
-                <input type='radio' name='numOfDigits' id='genFor12Digits' value='12'> <span>12位</span>
-                <input type='radio' name='numOfDigits' id='genFor15Digits' value='15'> <span>15位</span>
-                <input type='radio' name='numOfDigits' id='genFor20Digits' value='20'> <span>20位</span><br>
-                <input type='checkbox' name='genContainsSymbols' id='genContainsSymbols' value='true' style='margin-top: 5px; margin-right: 5px;'>不含符號<br>
-                <button id='pwGenSubmit' style='margin-top: 5px;'>創建</button>
-            </form>
-            <div class='box'>
-                <div style='text-decoration: underline;'>密碼: </div>
+                <div class='flexbox'>
+                    <select name='numOfDigits' id='numOfDigits' class='textField' style='border: 0; width: 40%; min-width: 150px;'>
+                        <option>20位</option>
+                        <option>15位</option>
+                        <option>12位</option>
+                        <option>10位</option>
+                        <option>8位</option>
+                    </select>
+                    <div class='textField'>
+                        <input type='checkbox' name='genContainsSymbols' id='genContainsSymbols' value='true' style='margin-right: 5px;'>不含符號
+                    </div>
+                    <button id='pwGenSubmit' style='margin-top: 5px;'>創建</button>
+                </div>
                 <div class='flexbox'>
                     <div id='showPwForGen' class='textField'>請選擇密碼位數並創建</div>
                     <button id='copyGenPw' style='margin-left: 10px;'>複製</button>
                 </div>
-            </div>
+            </form>
             <div id='genPwSaveForm' class='box'>
                 <div style='text-decoration: underline;'>另存密碼: </div>
                 <div>

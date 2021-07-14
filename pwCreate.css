@@ -23,7 +23,6 @@
 }
 
 #genPwSaveForm div {
-    padding: 2px 0;
     display: flex;
     justify-content: space-between;
 }
