@@ -17,6 +17,8 @@ body {
     background-color: rgba(180, 248, 200, 0.2);
     min-width: 350px;
     overflow: hidden;
+    position: fixed;
+    width: 100vw;
 }
 
 ::-webkit-scrollbar {
