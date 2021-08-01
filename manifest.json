@@ -2,8 +2,8 @@
     "name": "我的網頁",
     "short_name": "我的網頁",
     "start_url": ".",
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "background_color": "#0C0C1E",
+    "theme_color": "#0C0C1E",
     "display": "standalone",
     "icons": [{
             "src": "./icon192.png",
