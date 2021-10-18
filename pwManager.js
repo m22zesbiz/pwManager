@@ -175,6 +175,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                         memoForModifyInput.rows = '3'
                                         memoForModifyInput.style.border = '0'
                                         memoForModifyInput.style.resize = 'none'
+                                        memoForModifyInput.value = doc.data().Memo
                                         var submitBtnForModify = document.createElement('button')
                                         submitBtnForModify.type = 'submit'
                                         submitBtnForModify.innerHTML = '儲存'
@@ -277,9 +278,6 @@ window.addEventListener('DOMContentLoaded', function() {
                                                     alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                                     var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
                                                     try {
-                                                        pwMgrBtnEle.forEach((ele) => {
-                                                            ele.click()
-                                                        })
                                                         pwListRefresh.click()
                                                     } catch (err) {}
                                                 }, 3000);
@@ -319,13 +317,9 @@ window.addEventListener('DOMContentLoaded', function() {
                                         div.append(deleteNoButton)
                                         deleteYesButton.addEventListener('click', () => {
                                             db.collection('Password').doc(doc.id).delete()
-                                            var pwListRefresh = document.querySelector(`#${doc.data().Web}`)
                                             alertBoxBackground.parentNode.removeChild(alertBoxBackground)
                                             setTimeout(() => {
                                                 try {
-                                                    pwMgrBtnEle.forEach((ele) => {
-                                                        ele.click()
-                                                    })
                                                     pwListRefresh.click()
                                                 } catch (err) {}
                                             }, 100);

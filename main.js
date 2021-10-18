@@ -11,6 +11,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var contentEle = document.querySelector('#content')
 var homeScreenEle = document.querySelector('#homeScreen')
 var loginScreenEle = document.querySelector('#loginScreen')
 var pwMgrScreenEle = document.querySelector('#pwMgrScreen')

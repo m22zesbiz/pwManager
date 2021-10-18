@@ -1,6 +1,8 @@
 window.addEventListener('DOMContentLoaded', function() {
     // Password Creator
     var pwGenFormEle = document.querySelector('#pwGenForm')
+    var mainForPwCreateEle = document.querySelector('#mainForPwCreate')
+    var pwCreateHeadingEle = document.querySelector('#pwCreateHeading')
     var numOfDigitsEle = document.querySelector('#numOfDigits')
     var showPwForGenEle = document.querySelector('#showPwForGen')
     var copyGenPwEle = document.querySelector('#copyGenPw')
@@ -60,6 +62,82 @@ window.addEventListener('DOMContentLoaded', function() {
             refreshWebSelectionForPwGen()
         })
     })
+
+    pwCreateHeadingEle.addEventListener('click', () => {
+        var dateNow = new Date(Date.now())
+        var sevenDaysBeforeTodayDate
+        var sevenDaysBeforeTodayMonth
+        var sevenDaysBeforeTodayYear
+        if (dateNow.getDate() > 7) {
+            sevenDaysBeforeTodayDate = dateNow.getDate() - 7
+            sevenDaysBeforeTodayMonth = dateNow.getMonth()
+            sevenDaysBeforeTodayYear = dateNow.getYear() + 1900
+        } else if (dateNow.getMonth() > 0) {
+            sevenDaysBeforeTodayDate = dateNow.getDate() + 30 - 7
+            sevenDaysBeforeTodayMonth = dateNow.getMonth() - 1
+            sevenDaysBeforeTodayYear = dateNow.getYear() + 1900
+        } else {
+            sevenDaysBeforeTodayDate = dateNow.getDate() + 30 - 7
+            sevenDaysBeforeTodayMonth = dateNow.getMonth() + 12 - 1
+            sevenDaysBeforeTodayYear = dateNow.getYear() + 1900 - 1
+        }
+        var sevenDaysBeforeToday = new Date(sevenDaysBeforeTodayYear, sevenDaysBeforeTodayMonth, sevenDaysBeforeTodayDate)
+        db.collection('PasswordGeneratedRecord').where('User', '==', firebase.auth().currentUser.email.split('@')[0]).where('Date', '<=', sevenDaysBeforeToday).get().then(function(snapshot) {
+            snapshot.forEach((doc) => {
+                db.collection('PasswordGeneratedRecord').doc(doc.id).delete()
+            })
+        })
+        mainForPwCreateEle.style.display = 'none'
+        var genHistory = document.createElement('section')
+        genHistory.style.display = 'none'
+        genHistory.style.overflowY = 'scroll'
+        genHistory.style.height = 'calc(100vh - 68px - 50px - 30px)'
+        var flexbox = document.createElement('div')
+        flexbox.className = 'flexbox'
+        var backBtn = document.createElement('div')
+        backBtn.className = 'box'
+        backBtn.style.textAlign = 'center'
+        backBtn.innerHTML = '<'
+        var genHistoryHeading = document.createElement('div')
+        genHistoryHeading.className = 'box'
+        genHistoryHeading.style.flex = '1'
+        genHistoryHeading.style.textAlign = 'center'
+        genHistoryHeading.innerHTML = '創建記錄'
+        pwCreateScreenEle.append(genHistory)
+        genHistory.append(flexbox)
+        flexbox.append(backBtn)
+        flexbox.append(genHistoryHeading)
+        setTimeout(() => {
+            genHistory.style.display = 'block'
+            db.collection('PasswordGeneratedRecord').where('User', '==', firebase.auth().currentUser.email.split('@')[0]).orderBy('Date').get().then(function(snapshot) {
+                var arrayOfPwGenHistory = []
+                snapshot.forEach((doc) => {
+                    arrayOfPwGenHistory.unshift(doc.data())
+                })
+                arrayOfPwGenHistory.forEach((obj) => {
+                    var genHistoryList = document.createElement('div')
+                    genHistoryList.className = 'flexbox'
+                    genHistoryList.style.padding = '10px'
+                    var pwHistory = document.createElement('div')
+                    pwHistory.style.width = 'calc(50vw - 20px)'
+                    pwHistory.innerHTML = obj.Password
+                    var pwHistoryDate = document.createElement('div')
+                    pwHistoryDate.style.width = 'calc(50vw - 20px)'
+                    pwHistoryDate.innerHTML = new Date(Number(obj.Date.seconds + '000'))
+                    genHistory.append(genHistoryList)
+                    genHistoryList.append(pwHistory)
+                    genHistoryList.append(pwHistoryDate)
+                })
+            })
+        }, 500);
+        backBtn.addEventListener('click', () => {
+            genHistory.parentNode.removeChild(genHistory)
+            setTimeout(() => {
+                mainForPwCreateEle.style.display = 'block'
+            }, 500);
+        })
+    })
+
     pwGenFormEle.addEventListener('submit', (e) => {
         e.preventDefault()
         var numOfDigits = numOfDigitsEle[numOfDigitsEle.selectedIndex].value.replace('位', '')
@@ -104,12 +182,17 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
             }
             showPwForGenEle.innerHTML = pwGen
+            db.collection('PasswordGeneratedRecord').add({
+                Password: pwGen,
+                User: firebase.auth().currentUser.email.split('@')[0],
+                Date: new Date(),
+            })
         }
     })
 
     copyGenPwEle.addEventListener('click', (e) => {
         e.preventDefault()
-        copyDivToClipboard('showPwForGen') 
+        copyDivToClipboard('showPwForGen')
     })
 
     saveBtnForGenPwEle.addEventListener('click', () => {

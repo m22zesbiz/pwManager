@@ -1,6 +1,8 @@
 <!-- 
-    v3.2.2 of My HTML
-    - Adj theme color
+    v3.3 of My HTML
+    - Memo edit with previous contents
+    - Password manager refresh only password detail
+    - Log password generated record
 
     Forecast function:
     - News feed
@@ -64,7 +66,7 @@
                 <div id='countdown'></div>
             </div>
             <div id='function' class='box'>
-                <div id='functionHeading'>V3.2.2功能</div>
+                <div id='functionHeading'>V3.3功能</div>
                 <div id='functionsBox'>
                     <div class='pwMgrBtn link functions'>密碼管理</div>
                     <div class='pwSaveBtn link functions'>另存密碼</div>
@@ -149,40 +151,41 @@
             <div id='savingStatusForPwSave'></div>
         </section>
         <section id='pwCreateScreen'>
-            <div id='pwCreateHeading' class='box'>創建密碼</div>
-            <form id='pwGenForm' class='box'>
-                <label style='text-decoration: underline;'>密碼位數: </label><br>
-                <div class='flexbox'>
-                    <select name='numOfDigits' id='numOfDigits' class='textField' style='border: 0; width: 40%; min-width: 150px;'>
+            <div id='mainForPwCreate'>
+                <div id='pwCreateHeading' class='box'>創建密碼</div>
+                <form id='pwGenForm' class='box'>
+                    <label style='text-decoration: underline;'>密碼位數: </label><br>
+                    <div class='flexbox'>
+                        <select name='numOfDigits' id='numOfDigits' class='textField' style='border: 0; width: 40%; min-width: 150px;'>
                         <option>20位</option>
                         <option>15位</option>
                         <option>12位</option>
                         <option>10位</option>
                         <option>8位</option>
                     </select>
-                    <div class='textField'>
-                        <input type='checkbox' name='genContainsSymbols' id='genContainsSymbols' value='true' style='margin-right: 5px;'>不含符號
+                        <div class='textField'>
+                            <input type='checkbox' name='genContainsSymbols' id='genContainsSymbols' value='true' style='margin-right: 5px;'>不含符號
+                        </div>
+                        <button id='pwGenSubmit' style='margin-top: 5px;'>創建</button>
                     </div>
-                    <button id='pwGenSubmit' style='margin-top: 5px;'>創建</button>
-                </div>
-                <div class='flexbox'>
-                    <div id='showPwForGen' class='textField'>請選擇密碼位數並創建</div>
-                    <button id='copyGenPw' style='margin-left: 10px;'>複製</button>
-                </div>
-            </form>
-            <div id='genPwSaveForm' class='box'>
-                <div style='text-decoration: underline;'>另存密碼: </div>
-                <div>
-                    <span>網頁: </span>
-                    <select name='webForGenPw' id='webSelectionForGenPw' class='textField'>
+                    <div class='flexbox'>
+                        <div id='showPwForGen' class='textField'>請選擇密碼位數並創建</div>
+                        <button id='copyGenPw' style='margin-left: 10px;'>複製</button>
+                    </div>
+                </form>
+                <div id='genPwSaveForm' class='box'>
+                    <div style='text-decoration: underline;'>另存密碼: </div>
+                    <div>
+                        <span>網頁: </span>
+                        <select name='webForGenPw' id='webSelectionForGenPw' class='textField'>
                         <option>請選擇網頁</option>
                     </select>
-                </div>
-                <div style='justify-content: flex-end;'>
-                    <input id='webIfOtherForGenPw' class='textField' placeholder="其他網頁...">
-                </div>
-                <div><span>類型: </span>
-                    <select name='type' id='catForGenPw' class='textField' style='border: 0; '>
+                    </div>
+                    <div style='justify-content: flex-end;'>
+                        <input id='webIfOtherForGenPw' class='textField' placeholder="其他網頁...">
+                    </div>
+                    <div><span>類型: </span>
+                        <select name='type' id='catForGenPw' class='textField' style='border: 0; '>
                         <option>請選擇類型</option>
                         <option>個人</option>
                         <option>社交</option>
@@ -196,24 +199,25 @@
                         <option>就業</option>
                         <option>學習</option>
                     </select>
+                    </div>
+                    <div>
+                        <span>登入ID: </span>
+                        <input id='loginIDForGenPw' class='textField' placeholder="登入ID">
+                    </div>
+                    <div>
+                        <span>電郵: </span>
+                        <input id='emailForGenPw' class='textField' placeholder="電郵">
+                    </div>
+                    <div>
+                        <span>電話: </span>
+                        <input id='phoneForGenPw' class='textField' placeholder="電話">
+                    </div>
+                    <div>
+                        <span>備註: </span>
+                        <textarea class='textField' id='memoForGenPw' rows='3' placeholder='備註' style='border: 0; resize: none;'></textarea>
+                    </div>
+                    <div class='flexbox' style='justify-content: center;'><button id='saveBtnForGenPw'>儲存</button></div>
                 </div>
-                <div>
-                    <span>登入ID: </span>
-                    <input id='loginIDForGenPw' class='textField' placeholder="登入ID">
-                </div>
-                <div>
-                    <span>電郵: </span>
-                    <input id='emailForGenPw' class='textField' placeholder="電郵">
-                </div>
-                <div>
-                    <span>電話: </span>
-                    <input id='phoneForGenPw' class='textField' placeholder="電話">
-                </div>
-                <div>
-                    <span>備註: </span>
-                    <textarea class='textField' id='memoForGenPw' rows='3' placeholder='備註' style='border: 0; resize: none;'></textarea>
-                </div>
-                <div class='flexbox' style='justify-content: center;'><button id='saveBtnForGenPw'>儲存</button></div>
             </div>
             <div id='savingStatusForGenPw'></div>
         </section>
