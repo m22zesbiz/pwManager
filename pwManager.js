@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                             <span>登入ID: </span>
                                             <div id='${"I" + doc.data().ID + "D"}' class='pw textField'>${doc.data().ID}</div>
                                             <span>登入密碼: </span>
-                                            <div id='${"Pass" + doc.data().Password + "word"}' class='pw textField'>${doc.data().Password}</div>
+                                            <div id='${"Pass" + doc.data().Password + "word"}' class='pw textField' style="font-family: 'Courier New', Courier, monospace;">${doc.data().Password}</div>
                                             <span>電郵: </span>
                                             <div class='pw textField'>${doc.data().Email}</div>
                                             <span>電話: </span>
