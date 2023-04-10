@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
     })
 
     function countdown() {
-        var date = new Date(2023, 2, 5) / 1000
+        var date = Math.floor(Date.now() / 1000)
         var sec = date % 60
         var min = (date - sec) / 60
         var hrs = (min - min % 60) / 60
