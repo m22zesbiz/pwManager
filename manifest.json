@@ -1,6 +1,6 @@
 {
-    "name": "我的網頁",
-    "short_name": "我的網頁",
+    "name": "Password Manager",
+    "short_name": "Password Manager",
     "start_url": ".",
     "background_color": "#0C0C1E",
     "theme_color": "#0C0C1E",
