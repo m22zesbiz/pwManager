@@ -19,8 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
     })
 
     function countdown() {
-        // var currentDate = Math.floor(Date.now());
-        var currentDate = new Date(2023, 5, 20);
+        var currentDate = Math.floor(Date.now());
         var startDate = new Date(2018, 4, 12);
         var diff = new Date(currentDate - startDate); 
         var daysPassed = diff.getDate() - 1; 
